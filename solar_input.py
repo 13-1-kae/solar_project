@@ -108,11 +108,13 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     **output_filename** — имя входного файла
     **space_objects** — список объектов планет и звёзд
     """
-    with open(output_filename, 'w') as out_file:
-        for obj in space_objects:
-            a = obj.split()
-            print(out_file, "%s %d %s %f %s %d %s %d" % (a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7]))
+    out_file = open(output_filename, 'w')
+    for obj in space_objects:
+        out_file.write(obj.type + ' ' + str(obj.R) + ' ' + obj.color + ' ' + str(obj.m) + ' ' + str(obj.x) +
+                       ' ' + str(obj.y) + ' ' + str(obj.Vx) + ' ' + str(obj.Vy) + '\n')
+    out_file.close()
             # FIXED
+
 
 # FIXME: хорошо бы ещё сделать функцию, сохранающую статистику в заданный файл...
 
