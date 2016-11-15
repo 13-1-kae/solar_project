@@ -2,14 +2,15 @@
 # license: GPLv3
 
 from solar_objects import Star, Planet
+'''
 def calc(a):
     if 'E' in a:
         b = a.split('E')
-        c = float(b[0]*10**(float(b[1])))
+        c = float(b[0])*10**(int(b[1]))
     else:
         c = float(a)
     return c
-
+'''
 def read_space_objects_data_from_file(input_filename):
     """Cчитывает данные о космических объектах из файла, создаёт сами объекты
     и вызывает создание их графических образов
@@ -54,13 +55,13 @@ def parse_star_parameters(line, star):
     **star** — объект звезды.
     """
     a = line.split()
-    star.R = calc(a[1])
+    star.R = float(a[1])
     star.color = a[2]
-    star.m = calc(a[3])
-    star.x = calc(a[4])
-    star.y = calc(a[5])
-    star.Vx = calc(a[6])
-    star.Vy = calc(a[7])
+    star.m = float(a[3])
+    star.x = float(a[4])
+    star.y = float(a[5])
+    star.Vx = float(a[6])
+    star.Vy = float(a[7])
 
 
 
@@ -84,13 +85,13 @@ def parse_planet_parameters(line, planet):
     """
 
     a = line.split()
-    planet.R = calc(a[1])
+    planet.R = float(a[1])
     planet.color = a[2]
-    planet.m = calc(a[3])
-    planet.x = calc(a[4])
-    planet.y = calc(a[5])
-    planet.Vx = calc(a[6])
-    planet.Vy = calc(a[7])
+    planet.m = float(a[3])
+    planet.x = float(a[4])
+    planet.y = float(a[5])
+    planet.Vx = float(a[6])
+    planet.Vy = float(a[7])
     #pass  # FIXED
 
 
